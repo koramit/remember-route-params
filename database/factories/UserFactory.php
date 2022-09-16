@@ -18,7 +18,9 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
+            'org_id' => fake()->numberBetween(10031000, 10041000),
             'name' => fake()->name(),
+            'role' => collect(['super valentine', 'super admin', 'doctor', 'nurse', 'officer'])->random(),
             'email' => fake()->safeEmail(),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
