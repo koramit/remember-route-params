@@ -18,7 +18,7 @@ class Patient extends Model
     {
         return Attribute::make(
             get: fn () => $this->attributes['gender'] ? 'male' : 'female',
-            set: fn ($value) => $value === 'male',
+            set: fn ($value) => $value === 'male' ? 1:0,
         );
     }
 }
