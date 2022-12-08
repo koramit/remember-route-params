@@ -21,4 +21,11 @@ class Patient extends Model
             set: fn ($value) => $value === 'male' ? 1:0,
         );
     }
+
+    // patient has many medications
+    public function medications()
+    {
+        return $this->hasMany(PatientMedication::class);
+    }
+
 }

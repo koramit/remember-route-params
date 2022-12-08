@@ -7,3 +7,5 @@
 5. code along the video
 
 https://github.com/reinink/remember-query-strings
+
+## Resource Action Log
