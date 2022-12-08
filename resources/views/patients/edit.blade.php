@@ -25,6 +25,10 @@
     <p class="text-red-400">{{ $error }}</p>
     @endforeach
 
+    @if(session()->has('message'))
+    <p class="text-green-400">{{ session()->get('message') }}</p>
+    @endif
+
     <form action="{{ route('patients.update', $patient) }}" method="post" class="space-y-4 mt-5">
         @method('patch')
         @csrf

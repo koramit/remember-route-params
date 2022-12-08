@@ -20,11 +20,11 @@ class MedicationController extends Controller
 
     public function update(Request $request, Medication $medication)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required',
             'dosage_form' => 'required',
         ]);
-        $medication->update($request->only('name', 'dosage_form'));
+        $medication->update($validated);
         return back()->with('message', 'Medication updated');
     }
 }
